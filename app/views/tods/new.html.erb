@@ -1,0 +1,27 @@
+<h1> Agregar informacion </h1>
+
+
+<% if @tod.errors.any? %>
+<h2>No se pudo guardar el registro </h2>
+<u1>
+	<% @tod.errors.full_messages.each do |msg| %>
+	<li><%=msg %></li>
+	<% end %>
+</u1>
+<% end %>
+
+
+
+<%= form_for @tod do |f| %>
+	<p>
+		<%= f.label :nombre %>
+		<%= f.text_field :nombre %>
+	</p>
+	<p>
+		<%= f.label :descripcion %>
+		<%= f.text_area :descripcion %>
+	</p>
+	<p> 
+		<%= f.submit %>
+	</p>
+	<% end %>
